@@ -3,8 +3,6 @@ warnings.filterwarnings('ignore')
 from sklearn import datasets
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 from sklearn import linear_model
 from sklearn.preprocessing import PolynomialFeatures
@@ -61,7 +59,8 @@ pipe = Pipeline(steps)
 pipe.fit(X_tr,y_tr)
 print(pipe.predict([[2000,2,4,2015]]))
 #f =
-pickle.dump(pipe,open('model_1.joblib',"wb"))
+f = open('/Users/David/HousePrice_Pred/src/model_1.joblib','wb')
+pickle.dump(pipe,f)
 print(pipe.score(X_te,y_te))
 
 """pipe = load('model_1.joblib')"""

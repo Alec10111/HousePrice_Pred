@@ -3,7 +3,7 @@ from joblib import load
 from pydantic import BaseModel
 
 # cargamos el modelo
-pipe = load('model_1.joblib')
+pipe = load('/Users/David/HousePrice_Pred/src/model_1.joblib')
 
 
 def get_prediction(params):

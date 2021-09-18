@@ -10,7 +10,7 @@ function App() {
 
   function getPred(){
     // POST request using axios inside useEffect React hook
-    const article = {"YearBuilt":1990, "TotalBath": 1, "BedroomAbvGr": 5, "YearRemodAdd" : 2000};
+    //const article = {"YearBuilt":1990, "TotalBath": 1, "BedroomAbvGr": 5, "YearRemodAdd" : 2000};
     axios.post('http://127.0.0.1:8000/predict', details)
         .then(response => setPrediction(response.data.prediction));
 
@@ -28,19 +28,21 @@ function App() {
   
   }
 
-
-
-
   return (
     <div className="App">
-      <h1>House Price Predictor</h1>
-      <p>Enter house details</p>
-      <form>
-        <input onChange={handleChange} name="YearBuilt" type="text" placeholder="YearBuilt"></input>
-        <input onChange={handleChange} name="TotalBath" type="text" placeholder="TotalBath"></input>
-        <input onChange={handleChange} name="BedroomAbvGr" type="text" placeholder="BedroomAbvGr"></input>
-        <input onChange={handleChange} name="YearRemodAdd" type="text" placeholder="YearRemodAdd"></input>
-        </form>
+    <div className="header"><h1 >House Price Predictor</h1></div>
+      
+      <h4>Enter house details</h4>
+      <div > <input className="inf" onChange={handleChange} name="YearBuilt" type="text" placeholder="YearBuilt"></input></div>
+      <div><input className="inf" onChange={handleChange} name="TotalBath" type="text" placeholder="TotalBath"></input></div>
+      <div><input className="inf" onChange={handleChange} name="BedroomAbvGr" type="text" placeholder="BedroomAbvGr"></input></div>
+      <div><input className="inf" onChange={handleChange} name="YearRemodAdd" type="text" placeholder="YearRemodAdd"></input></div>
+       
+        
+        
+        
+        
+        
         <button onClick={getPred}>Send</button>
       
       {/* <button onClick={()=>setPrediction(3)} type="submit">Send</button> */}
